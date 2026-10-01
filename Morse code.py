@@ -7,30 +7,10 @@ morse = {"a": "._","b": "_...","c": "_._.","d": "_..","e":".","f":".._.","h":"..
 def encode(text: str):
     s = ""
     for i in text:
-        for m in morse:
-            if text != "." or "_":
-                print("Не правильно")
-            if i == " ":
-                    if m == s[1]:
-                        with open('c',"w") as file:
-                            file.write(s[0])
-                    else:
-                        pass
-            else:
-                pass
-
-
-def decode(text: str):
-
-
-
-
-
-
-
-
-
-
+        for m in morse.keys():
+            if i == m:
+                s = m
+    print(s)
 
 
 if __name__ == "__main__":
