@@ -9,7 +9,7 @@ def encode(text: str):
     for i in text:
         for m in morse.keys():
             if i == m:
-                s = m
+                s = m.get()
     print(s)
 
 
