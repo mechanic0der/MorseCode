@@ -2,13 +2,31 @@ morse = {"a": "._","b": "_...","c": "_._.","d": "_..","e":".","f":".._.","h":"..
 "l":"._..","m":"__","n":"_.","o":"___","p":".__.","q":"__._","r":"._.","s":"...","t":"_","u":".._","v":"..._","w":".__",
 "x":"_.._","y":"_.__","z":"__..","1":".____","2":"..__..","3":"...__","4":"...._","5":".....","6":"_....","7":"__...",
 "8":"___..","9":"____.","0":"_____"}
-print("1 - зашифровать"
-      "2 - расшифровать")
-sr = int(input())
-def s(line):
-    for c in line:
-        for i in morse.values():
-            
+
+
+def encode(text: str):
+    s = ""
+    for i in text:
+        for m in morse:
+            if text != "." or "_":
+                print("Не правильно")
+            if i == " ":
+                    if m == s[1]:
+                        with open('c',"w") as file:
+                            file.write(s[0])
+                    else:
+                        pass
+            else:
+                pass
+
+
+def decode(text: str):
+
+
+
+
+
+
 
 
 
@@ -16,3 +34,4 @@ def s(line):
 
 
 if __name__ == "__main__":
+    encode(input())
