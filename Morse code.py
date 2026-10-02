@@ -5,13 +5,38 @@ morse = {"a": "._","b": "_...","c": "_._.","d": "_..","e":".","f":".._.","h":"..
 
 
 def encode(text: str):
-    s = ""
+    s = []
     for i in text:
         for m in morse.keys():
-            if i == m:
-                s = m.get()
-    print(s)
+            if i.lower() == m:
+                s.append(morse[m])
+    return " ".join(s)
+
+
+def decode(text: str):
+    s = []
+    for i in text.split():
+        for key, value in morse.items():
+            if i == value:
+                s.append(key)
+    return ("".join(s)).capitalize()
+
+
+def main():
+    print("1. зашифровать\n2. расшифровать\n3. выйти\nВыберите действие: ",)
+    n = int(input())
+    while True:
+        match n:
+            case 1:
+                return encode(input("Введите текст: "))
+            case 2:
+                return decode(input("Введите текст: "))
+            case 3:
+                return 0
 
 
 if __name__ == "__main__":
-    encode(input())
+    print(main())
+
+
+
