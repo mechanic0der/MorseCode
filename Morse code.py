@@ -33,6 +33,8 @@ def main():
                 return decode(input("Введите текст: "))
             case 3:
                 return 0
+            case _:
+                return "Такого действия нет"
 
 
 if __name__ == "__main__":
