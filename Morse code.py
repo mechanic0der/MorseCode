@@ -27,23 +27,29 @@ def decode(text: str):
 
 
 def main():
-    while True:
-        print("1. зашифровать\n2. расшифровать\n3. выйти\nВыберите действие: ")
-        n = int(input())
-        match n:
-            case 1:
-                with open("morse.txt","w") as file:
-                    file.write(encode(input("Введите текст:")))
-            case 2:
-                with open("morse.txt","w"):
-                    file.write(decode(input("Введите текст: ")))
-            case 3:
-                print("Работа завершена")
-                break
-            case _:
-                print("Такого действия нет")
-
-
+        global b
+        while True:
+            print("Откуда взять текст?"
+                  "1 - ввести вручную"
+                  "2 - прочитать из файла")
+            n = int(input(">>> "))
+            match n:
+                case 1:
+                    b = input("")
+                case 2:
+                    with open(f"{input("")}.txt","r") as file:
+                        g = file.read()
+            print("куда вывести результат?"
+                  "1 - в консоль"
+                  "2 - сохранить в файл")
+            a = int(input(">>> "))
+            match a:
+                case 1:
+                    d = int(input())
+                    if d == 1:
+                        print(list(map(encode,b)))
+                    if d == 2:
+                        print(list(map(decode,b)))
 if __name__ == "__main__":
     main()
 
