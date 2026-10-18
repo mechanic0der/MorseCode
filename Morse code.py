@@ -44,9 +44,11 @@ def main():
     user_text = ""
     while True:
         language = 'en'
-        language_user_input = input("\n1. На каком языке текст?\n\t1 - Русский\n\t2 - Английский\n>>> ")
+        language_user_input = input("\n1. На каком языке текст?\n\t1 - Русский\n\t2 - Английский\n\t3. Выйти\n>>> ")
         if language_user_input == '1':
             language = 'ru'
+        elif language_user_input == '3':
+            break
         user_input_1 = int(input("2. Откуда взять текст?\n\t1 - ввести вручную\n\t2 - прочитать из файла\n>>> "))
         match user_input_1:
             case 1:
